@@ -5,7 +5,7 @@ let isFlipped = false;
 
 
 // Request access to the user's camera
-navigator.mediaDevices.getUserMedia({ video: true })
+navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } })
   .then((stream) => {
     // Set the video element's source object to the camera stream
     video.srcObject = stream;
